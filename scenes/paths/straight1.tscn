@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/paths/starith1.png" type="Texture" id=1]
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0.0187378, 99.8414, 28.7728, 23.4084 )
