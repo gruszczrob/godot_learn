@@ -9,35 +9,45 @@ var velocity: Vector2 = Vector2()
 var direction: Vector2 = Vector2()
 var move: Vector2 = Vector2()
 onready var animationPlayer = $AnimationPlayer
+var moving: bool = false
 
 func turn():
-	var Player_position = position
-	var Mouse_position = get_global_mouse_position() 
+	var diff: Vector2 = Vector2(get_global_mouse_position() -position)
 	
-	if Player_position[0]<Mouse_position[0] and abs(Player_position[0] - Mouse_position[0])>abs(Player_position[1] - Mouse_position[1]):
-		if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("right") or Input.is_action_pressed("left"):
-			animationPlayer.play("RunRight")
+	if abs(diff.x)>2*abs(diff.y) or abs(diff.y)>2*abs(diff.x):
+		if abs(diff.x)>2*abs(diff.y):
+			if diff.x>0:
+				if moving == true:
+					animationPlayer.play("RunRight")
+				else:
+					animationPlayer.play("IdleRight")
+			else:
+				if moving == true:
+					animationPlayer.play("RunLeft")
+				else:
+					animationPlayer.play("IdleLeft")
 		else:
-			animationPlayer.play("IdleRight")
-			
-	if Player_position[0]>Mouse_position[0] and abs(Player_position[0] - Mouse_position[0])>abs(Player_position[1] - Mouse_position[1]):
-		if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("right") or Input.is_action_pressed("left"):
-			animationPlayer.play("RunLeft")
+			if diff.y>0:
+				if moving == true:
+					animationPlayer.play("RunDown")
+				else:
+					animationPlayer.play("IdleDown")
+			else:
+				if moving == true:
+					animationPlayer.play("RunUp")
+				else:
+					animationPlayer.play("IdleUp")
+	else: 
+		if diff.x>0:
+			if diff.y>0:
+				animationPlayer.play("IdleRD")
+			else:
+				animationPlayer.play("IdleRU")
 		else:
-			animationPlayer.play("IdleLeft")
-			
-	if Player_position[1]<Mouse_position[1] and abs(Player_position[0] - Mouse_position[0])<abs(Player_position[1] - Mouse_position[1]):
-		if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("right") or Input.is_action_pressed("left"):
-			animationPlayer.play("RunDown")
-		else:
-			animationPlayer.play("IdleDown")
-		
-	if Player_position[1]>Mouse_position[1] and abs(Player_position[0] - Mouse_position[0])<abs(Player_position[1] - Mouse_position[1]):
-		if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("right") or Input.is_action_pressed("left"):
-			animationPlayer.play("RunUp")
-		else:
-			animationPlayer.play("IdleUp")
-
+			if diff.y>0:
+				animationPlayer.play("IdleLD")
+			else:
+				animationPlayer.play("IdleLU")
 
 
 func read_input():
@@ -59,6 +69,11 @@ func read_input():
 	if Input.is_action_pressed("right"):
 		velocity.x +=1
 		direction = Vector2(1, 0)
+		
+	if velocity==Vector2(0,0) :
+		moving=false
+	else: 
+		moving=true
 
 	velocity = velocity.normalized()
 	move = velocity*SPEED
@@ -67,7 +82,7 @@ func read_input():
 
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	read_input()
 	turn()
 	velocity=velocity.rotated(rotation)

@@ -429,6 +429,7 @@ tile_data = PoolIntArray( -786448, -1073741798, 0, -786447, 26, 0, -786446, 26, 
 [node name="Camera2D" type="Camera2D" parent="TileMap"]
 scale = Vector2( -2.41929, 2.78588 )
 current = true
+zoom = Vector2( 2, 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
 position = Vector2( 130, -149 )

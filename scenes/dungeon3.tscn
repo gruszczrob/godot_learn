@@ -244,7 +244,6 @@ tile_data = PoolIntArray( -393223, 1610612742, 0, -393222, 1610612741, 0, -39322
 
 [node name="Camera2D" type="Camera2D" parent="TileMap"]
 current = true
-zoom = Vector2( 0.5, 0.5 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 180 )
@@ -258,18 +257,15 @@ script = ExtResource( 5 )
 
 [node name="Door3" type="Sprite" parent="Door2"]
 position = Vector2( 16.3345, -6861.03 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 offset = Vector2( -190.909, -286.364 )
 
 [node name="Door4" type="Sprite" parent="Door2"]
 position = Vector2( 2009.13, -6861.03 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 offset = Vector2( -190.909, -286.364 )
 
 [node name="Door5" type="Sprite" parent="Door2"]
 position = Vector2( -1911.12, -6861.03 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 offset = Vector2( -190.909, -286.364 )
