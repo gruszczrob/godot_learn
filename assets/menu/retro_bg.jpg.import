@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door.png-fa90cb71593c56984e32a680f078b170.stex"
+path="res://.import/retro_bg.jpg-a5d89a9acedcd1c888f510c20f528aef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dungeon1/door.png"
-dest_files=[ "res://.import/door.png-fa90cb71593c56984e32a680f078b170.stex" ]
+source_file="res://assets/menu/retro_bg.jpg"
+dest_files=[ "res://.import/retro_bg.jpg-a5d89a9acedcd1c888f510c20f528aef.stex" ]
 
 [params]
 

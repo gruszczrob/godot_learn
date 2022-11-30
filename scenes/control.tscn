@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/menu/retro_bg.jpg" type="Texture" id=1]
+[ext_resource path="res://scripts/buttons.gd" type="Script" id=2]
+[ext_resource path="res://scripts/options.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="RetroBg" type="Sprite" parent="."]
+position = Vector2( 1, 1 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.8, 0.8 )
+
+[node name="Play_btn" type="Button" parent="."]
+margin_left = -60.0
+margin_top = 170.0
+margin_right = 60.0
+margin_bottom = 220.0
+focus_neighbour_top = NodePath("../Exit_btn")
+focus_neighbour_bottom = NodePath("../Options_btn")
+text = "Back"
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -105.0
+margin_top = 12.0
+margin_right = 137.0
+margin_bottom = 94.0
+custom_colors/font_color = Color( 0, 0.184314, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "UP - W / UP ARROW
+DOWN - S / DOWN ARROW
+RIGHT - D / RIGHT ARROW
+LEFT - A / LEFT ARROW
+CONFIRM GO TO ANOTHER ROOM - E"

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door.png-fa90cb71593c56984e32a680f078b170.stex"
+path="res://.import/closed_door.png-57c2cf641021c548a06af61d90efa445.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dungeon1/door.png"
-dest_files=[ "res://.import/door.png-fa90cb71593c56984e32a680f078b170.stex" ]
+source_file="res://assets/closed_door.png"
+dest_files=[ "res://.import/closed_door.png-57c2cf641021c548a06af61d90efa445.stex" ]
 
 [params]
 

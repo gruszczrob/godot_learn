@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
+"class": "Door_back_box",
+"language": "GDScript",
+"path": "res://scripts/door_back_box.gd"
+}, {
+"base": "Area2D",
 "class": "Door_box",
 "language": "GDScript",
 "path": "res://scripts/Door_box.gd"
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://scripts/Travel_box.gd"
 } ]
 _global_script_class_icons={
+"Door_back_box": "",
 "Door_box": "",
 "Travel_box": ""
 }
@@ -27,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="nauka"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/Main_menu.tscn"
 config/icon="res://icon.png"
 
 [display]
