@@ -16,3 +16,4 @@ func rand(var notIt1, var notIt2, var notIt3):
 	while my_random_number==notIt1 or my_random_number==notIt2 or my_random_number==notIt3:
 		my_random_number = floor(rng.randf_range(1, dungeons.size()))
 	return my_random_number
+

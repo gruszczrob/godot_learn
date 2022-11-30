@@ -794,6 +794,7 @@ tile_data = PoolIntArray( -393223, 1610612767, 0, -393222, 1610612759, 0, -39322
 
 [node name="Camera2D" type="Camera2D" parent="TileMap"]
 current = true
+zoom = Vector2( 0.8, 0.8 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 179 )
